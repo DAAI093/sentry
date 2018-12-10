@@ -17,7 +17,7 @@ describe('Sentry Application Details', function() {
       it('it shows empty scopes and no credentials', function() {
         expect(wrapper).toMatchSnapshot();
         // new app starts off with no scopes selected
-        expect(wrapper.find('ApplicationScopes').prop('scopes')).toEqual([]);
+        expect(wrapper.find('PermissionSelection').prop('scopes')).toEqual([]);
         // 'API Scopes' should be last PanelHeader since 'Credentials'
         // shouldn't be rendered when creating a new application.
         expect(
@@ -25,7 +25,7 @@ describe('Sentry Application Details', function() {
             .find('PanelHeader')
             .last()
             .text()
-        ).toBe('API Scopes');
+        ).toBe('Permissions');
       });
     });
 
